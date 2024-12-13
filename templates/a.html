@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='a.css') }}">
+</head>
+<body>
+
+<h1>Notes</h1>
+
+<!-- Form to add a new note -->
+<form action="/addnotes" method="post">
+    <label for="notes">Note:</label><br>
+    <textarea id="notes" name="notes" rows="4" cols="50" required></textarea><br><br>
+    <input type="submit" value="Add Note">
+</form>
+
+<!-- Displaying existing notes -->
+<ul>
+    {% for i in data %}
+    <div id="container">
+        <li> 
+            <strong>ID:</strong> {{ i.id }} <br>
+            <strong>Note:</strong> {{ i.notes }}
+        </li>
+    </div>
+    {% endfor %}
+</ul>
+
+<!-- Display message after adding a note -->
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+</body>
+</html>

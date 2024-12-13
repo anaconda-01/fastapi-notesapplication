@@ -1,0 +1,15 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: rgb(0, 8, 255) ;
+}
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    margin-bottom: 5px;
+    
+}
